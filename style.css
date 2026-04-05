@@ -1,0 +1,297 @@
+/* Custom Styles for GameHub Online Game Store */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4f46e5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+/* Navigation Link Animation */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #818cf8;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Game Card Hover Effects */
+.game-card {
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+}
+
+.game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
+    transition: left 0.7s ease;
+}
+
+.game-card:hover::before {
+    left: 100%;
+}
+
+/* Category Card Hover Effects */
+.category-card {
+    transition: all 0.4s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
+
+.category-card:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Platform Card Hover Effects */
+.platform-card {
+    transition: all 0.4s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.platform-card:hover i {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Trending Card Hover Effects */
+.trending-card {
+    transition: all 0.4s ease;
+}
+
+.trending-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.15);
+}
+
+/* Deal Card Hover Effects */
+.deal-card {
+    transition: all 0.4s ease;
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+    border-color: #818cf8 !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient Text Animation */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #818cf8, #6366f1, #4f46e5, #6366f1, #818cf8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite;
+}
+
+/* Hero Section Image Overlay */
+.hero-image {
+    position: relative;
+}
+
+.hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 70%, rgba(17, 24, 39, 0.9) 100%);
+    border-radius: 1rem;
+}
+
+/* Star Rating */
+.star-rating {
+    display: inline-flex;
+    direction: ltr;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .game-card, .category-card, .platform-card, .trending-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(99, 102, 241, 0.3);
+    border-radius: 50%;
+    border-top-color: #6366f1;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Form Input Focus */
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Staggered Animation Delays */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Price Animation */
+.price-discount {
+    position: relative;
+    display: inline-block;
+}
+
+.price-discount::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #ef4444;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+/* Button Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    }
+}
+
+.pulse-button {
+    animation: pulse 2s infinite;
+}
+
+/* Game Image Loading Effect */
+.game-image {
+    transition: filter 0.3s ease;
+}
+
+.game-image.loading {
+    filter: blur(10px);
+}
+
+.game-image.loaded {
+    filter: blur(0);
+}
+
+/* Fire Animation for Trending */
+@keyframes fire {
+    0%, 100% {
+        color: #fbbf24;
+    }
+    50% {
+        color: #f97316;
+    }
+}
+
+.fire-icon {
+    animation: fire 1s infinite;
+}
